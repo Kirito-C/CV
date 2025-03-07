@@ -167,19 +167,6 @@ nav ul li a:hover {
   font-size: 0.9em;
 }
 
-/* Versione Mobile */
-@media (max-width: 768px) {
-  .lista-attestati {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .attestato {
-    min-height: auto;
-    padding: 1.5rem;
-  }
-}
-
 .github-button {
   display: inline-block;
   background: #333;
@@ -319,59 +306,58 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
+  .lista-attestati {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .attestato {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+  
+  header {
+    backdrop-filter: none;
+    background-color: #1a1a1a;
   }
 
   nav ul {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100vh;
-    background: linear-gradient(160deg, #3498db, #8e44ad);
-    flex-direction: column;
-    padding: 4rem 1rem 1rem;
-    margin: 0;
-    transition: right 0.3s ease;
-    z-index: 1000;
+    background-color: #6CB4EE; /* Colore gentile (baby blue) */
+    right: -100%;
+    transition: none; /* Rimossa animazione */
+    padding-top: 4rem;
   }
 
-  nav ul.active {
-    right: 0;
-  }
-
-  nav ul li {
-    margin: 0.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .nav-toggle {
+    color: #6CB4EE; /* Colore burger matching */
+    transition: none;
   }
 
   nav ul li a {
-    padding: 0.8rem;
-    border-radius: 5px;
-    display: block;
-    transition: background 0.3s ease;
+    color: #1a1a1a; /* Testo scuro per contrasto */
+    font-weight: 600;
+  }
+
+  nav ul li a:hover {
+    background-color: rgba(255,255,255,0.3); /* Effetto sottile */
   }
 
   .nav-toggle.active {
-    position: fixed;
-    right: 1rem;
-    top: 1rem;
-    color: #fff;
-    background: rgba(0,0,0,0.3);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: transparent;
+    color: #1a1a1a; /* Colore contrastante col menu aperto */
   }
 }
 
+/* Rimuovi effetti complessi da elementi vari */
+.info, .progetto, .attestato, #form-contattami {
+  backdrop-filter: none !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Semplifica hover elementi */
+.info:hover, .progetto:hover, .attestato:hover {
+  transform: none !important;
+}
 @media (min-width: 769px) {
   nav ul li a:hover {
     background: linear-gradient(90deg, #3498db, #8e44ad);
