@@ -108,8 +108,8 @@ navToggle.addEventListener('click', function(e) {
 
 // Chiudi menu cliccando fuori
 document.addEventListener('click', (e) => {
-  if (window.innerWidth <= 768 && 
-      !e.target.closest('nav') && 
+  if (window.innerWidth <= 768 &&
+      !e.target.closest('nav') &&
       navMenu.classList.contains('active')) {
     toggleMenu();
   }
