@@ -88,6 +88,7 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Modifiche JavaScript
 const navToggle = document.createElement('button');
 navToggle.className = 'nav-toggle';
 navToggle.innerHTML = '☰';
@@ -108,9 +109,7 @@ navToggle.addEventListener('click', function(e) {
 
 // Chiudi menu cliccando fuori
 document.addEventListener('click', (e) => {
-  if (window.innerWidth <= 768 &&
-      !e.target.closest('nav') &&
-      navMenu.classList.contains('active')) {
+  if (!e.target.closest('nav') && navMenu.classList.contains('active')) {
     toggleMenu();
   }
 });
@@ -118,15 +117,8 @@ document.addEventListener('click', (e) => {
 // Chiudi menu al click sui link
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
+    if (navMenu.classList.contains('active')) {
       toggleMenu();
     }
   });
-});
-
-// Adatta menu al resize
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-    toggleMenu();
-  }
 });
