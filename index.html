@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simone Rossi - Curriculum Vitae</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#progetti">Progetti</a></li>
+      <li><a href="#attestati">Attestati</a></li>
+      <li><a href="#contatti">Contattami</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home" class="page">
+  <div class="suDiMe">
+    <div class="info">
+      <h1>QUALCHE INFORMAZIONE SU DI ME</h1>
+      <p>Ciao sono Simone Rossi, studente di informatica al quarto anno dell'IIS Castelli di Brescia.
+        L'informatica è da sempre la mia passione principale; di fatto svolgo diversi progetti, non solo scolastici
+        ma anche in autonomia. Inoltre, partecipo al PCTO Helios che si svolge periodicamente ogni martedì
+        della settimana.</p>
+    </div>
+    <div class="info" id="dati-anagrafici">
+      <h1>I MIEI DATI</h1>
+      <p>Nome: Simone</p>
+      <p>Cognome: Rossi</p>
+      <p>Età: 17 anni</p>
+      <p>Residenza: Via Del Dosso 78, Mairano (BS)</p>
+      <p>Scuola: IIS Benedetto Castelli (Via Antonio Cantore 9 - BS)</p>
+    </div>
+  </div>
+</section>
+
+<section id="progetti" class="page">
+  <h1>ALCUNI DEI MIEI PROGETTI</h1>
+  <div class="lista-progetti">
+    <div class="progetto">
+      <h2>ArduinoDearpyGUI</h2>
+      <p>Progetto di gruppo svolto in classe con l'obiettivo
+        di creare un programma in python contente grafici
+        per visualizzare dati come quelli della temperatura
+        e dell'umidità, misurati da sensori che vengono poi inviati dall'arduino al computer tramite la porta seriale</p>
+      <a href="https://github.com/Kirito-C/ArduinoDearPyGUI" target="_blank" class="github-button">Vedi su GitHub</a>
+    </div>
+    <div class="progetto">
+      <h2>Analisi di un Dataset</h2>
+      <p>Programma in python su Colab che ha come fine l'analisi
+        di un dataset, che servirà poi per creare programmi particolari,
+        grafici e mappe tramite librerie esterne</p>
+      <a href="https://github.com/Kirito-C/DatasetPythonProject" target="_blank" class="github-button">Vedi su GitHub</a>
+    </div>
+    <div class="progetto">
+      <h2>Enigma</h2>
+      <p>Progetto di gruppo, ancora in fase di definzione, svolto in classe.
+        Realizzato con il linguaggio
+        Java e tramite l'utilizzo della libreria grafica interna JavaFX,
+        questo progetto prevede la creazione di una macchina Enigma in grado
+        di cifrare e decifrare un messaggio</p>
+      <a href="https://github.com/Kirito-C/Enigma" target="_blank" class="github-button">Vedi su GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="attestati" class="page">
+  <h1>I MIEI ATTESTATI</h1>
+    <div class="lista-attestati">
+      <div class="attestato">
+        <h2>Siviglia e la transizione ecologica</h2>
+        <p>PON "Per la scuola, competenze e ambienti per l’apprendimento"</p>
+        <p>Codice: 10.6.6B-FSEPON-LO-2024-106</p>
+        <p>Azione: Stage/tirocini</p>
+        <p>Anno di conseguimento: 2025</p>
+      </div>
+      <div class="attestato">
+        <h2>Hydrogen language</h2>
+        <p>PON "Per la scuola, competenze e ambienti per l’apprendimento"</p>
+        <p>Codice Progetto: 10.2.2A-FSEPON-LO-2024-12</p>
+        <p>Tipo di intervento: Lingua straniera</p>
+        <p>Anno di conseguimento: 2025</p>
+      </div>
+      <div class="attestato">
+        <h2>Gli oggetti si muovono</h2>
+        <p>PON "Per la scuola, competenze e ambienti per l’apprendimento"</p>
+        <p>Codice Progetto: 10.2.2A-FDRPOC-LO-2022-39</p>
+        <p>Tipo di intervento: Competenza digitale</p>
+        <p>Anno di conseguimento: 2023</p>
+      </div>
+  </div>
+</section>
+
+<section id="contatti" class="page">
+  <h1>CONTATTAMI</h1>
+  <form id="form-contattami" action="https://formspree.io/f/meoajjgw" method="POST">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="cognome">Cognome:</label>
+      <input type="text" id="cognome" name="surname" required>
+    </div>
+    <div class="form-group">
+      <label for="numTelefono">Telefono:</label>
+      <input type="tel" id="numTelefono" name="phone">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="messaggio">Messaggio:</label>
+      <textarea id="messaggio" name="message" rows="5" required></textarea>
+    </div>
+    <button type="submit">Invia Messaggio</button>
+  </form>
+  <footer>
+    <p>© 2025 Simone Rossi</p>
+  </footer>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>
