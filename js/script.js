@@ -88,8 +88,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Aggiorna lo script con questa parte
-// Gestione menu mobile
 const navToggle = document.createElement('button');
 navToggle.className = 'nav-toggle';
 navToggle.innerHTML = '☰';
@@ -97,27 +95,38 @@ document.querySelector('nav').prepend(navToggle);
 
 const navMenu = document.querySelector('nav ul');
 
-navToggle.addEventListener('click', function() {
+function toggleMenu() {
   navMenu.classList.toggle('active');
-  this.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+  navToggle.classList.toggle('active');
+  document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+navToggle.addEventListener('click', function(e) {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+// Chiudi menu cliccando fuori
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && 
+      !e.target.closest('nav') && 
+      navMenu.classList.contains('active')) {
+    toggleMenu();
+  }
 });
 
 // Chiudi menu al click sui link
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
     if (window.innerWidth <= 768) {
-      navMenu.classList.remove('active');
-      navToggle.innerHTML = '☰';
+      toggleMenu();
     }
   });
 });
 
-// Chiudi menu cliccando fuori
-document.addEventListener('click', (e) => {
-  if (window.innerWidth <= 768 &&
-      !e.target.closest('nav') &&
-      navMenu.classList.contains('active')) {
-    navMenu.classList.remove('active');
-    navToggle.innerHTML = '☰';
+// Adatta menu al resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+    toggleMenu();
   }
 });
